@@ -1,5 +1,22 @@
 import json
+"""
+a script to parse /etc/passwd to readable key pair value
 
+offsec:x:1000:1000:offsec,,,:/home/offsec:/bin/bash
+
+[
+    {
+        "login_name": "offsec",
+        "encrypted_password": "x",
+        "uid": "1000",
+        "gid": "1000",
+        "user_info": "offsec,,,",
+        "home_directory": "/home/offsec",
+        "shell": "/bin/bash"
+    }
+]
+
+"""
 class PasswdParser:
     def __init__(self, passwd_file='/etc/passwd'):
         self.passwd_file = passwd_file
