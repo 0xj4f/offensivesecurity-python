@@ -25,7 +25,7 @@ cryptography==2.6.1
 cssselect==1.1.0
 Cython==0.29.2
 deprecation==2.0.6
-Django==1.11.23
+Django==3.2.23
 dnslib==0.9.7
 dnspython==1.16.0
 easygui==0.96
@@ -88,7 +88,7 @@ PasteScript==2.0.2
 peepdf==0.4.2
 pefile==2019.4.18
 pexpect==4.6.0
-Pillow==6.1.0
+Pillow==10.0.0
 plaster==1.0
 plaster-pastedeploy==0.5
 prettytable==0.7.2
