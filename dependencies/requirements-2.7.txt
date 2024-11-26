@@ -98,7 +98,7 @@ pyasn1==0.4.2
 pyasn1-modules==0.2.1
 pycairo==1.16.2
 pycrypto==2.6.1
-pycryptodomex==3.6.1
+pycryptodomex==3.19.1
 pydns==2.3.6
 pydot==1.4.1
 pyenchant==2.0.0
