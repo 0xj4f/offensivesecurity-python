@@ -21,7 +21,7 @@ Click==7.0
 colorama==0.3.7
 configparser==3.5.0b2
 constantly==15.1.0
-cryptography==2.6.1
+cryptography==41.0.4
 cssselect==1.1.0
 Cython==0.29.2
 deprecation==2.0.6
