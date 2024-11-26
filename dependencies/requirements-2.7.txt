@@ -148,7 +148,7 @@ SQLAlchemy==1.3.1
 sqlalchemy-schemadisplay==1.3
 sqlparse==0.2.4
 Tempita==0.5.2
-tornado==5.1.1
+tornado==6.3.3
 tqdm==4.28.1
 translationstring==1.3
 trollius==2.0.1
