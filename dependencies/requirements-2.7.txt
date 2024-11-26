@@ -136,7 +136,7 @@ requests==2.21.0
 scapy==2.4.2
 scapy-http==1.8.2
 scgi==1.13
-selenium==3.14.1
+selenium==4.15.1
 service-identity==18.1.0
 simplejson==3.16.0
 singledispatch==3.4.0.3
