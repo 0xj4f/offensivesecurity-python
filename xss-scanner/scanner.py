@@ -37,11 +37,25 @@ class Scanner:
             url = self.target_url
 
         href_links = self.extract_links_from(url)
+        # print("url:", url)
+        # print("href_links:", href_links)
         for link in href_links:
-            parsed_link = urlparse.urljoin(url, link)
+            # parsed_link = urlparse.urljoin(url, link)
+            parsed_link = urlparse.urljoin(self.target_url + "/", link)
+            print("parsed_link: ",parsed_link)
+            
+            if link in [".", ".."]:
+                continue
 
             if "#" in parsed_link:
                 parsed_link = parsed_link.split("#")[0]
+                
+            # if "/dvwa/dvwa/" in parsed_link:
+            #     continue
+            # static
+            if any(parsed_link.endswith(ext) for ext in [".css", ".js", ".ico", ".jpg", ".png", ".gif", ".svg"]):
+                continue
+
 
             if (
                 self.target_url in parsed_link
@@ -117,12 +131,17 @@ def dvwa_scan():
     # example attack if there's authentication
     # dvwa target
     # docker run --rm -it -p 80:80 vulnerables/web-dvwa
-    target_url = "http://localhost"  # dvwa
-    links_to_ignore = ["http://localhost/logout.php"]
+    # target_url = "http://localhost"  # dvwa
+    # links_to_ignore = ["http://localhost/logout.php"]
 
+    target_url = "https://d4jefcoeodr48.cloudfront.net/dvwa"
+    links_to_ignore = ["https://d4jefcoeodr48.cloudfront.net/dvwa/logout.php"]
+    
+    
     vuln_scanner = Scanner(url=target_url, ignore_links=links_to_ignore)
     login = f"{target_url}/login.php"
     token = vuln_scanner.extract_csrf_token(vuln_scanner.session, url=login)
+    print("csrf_token: ", token)
     dvwa_login = {
         "username": "admin",
         "password": "password",
@@ -139,8 +158,10 @@ def dvwa_scan():
 def example_scan():
     # example attack
     # if no authentication
-    target_url = "http://192.168.254.109:2368/"
-    links_to_ignore = ["http://localhost/logout.php"]
+    # target_url = "http://192.168.254.109:2368/"
+    target_url = "https://blog.chardskarth.me/"
+    # "https://blog.chardskarth.me/"
+    links_to_ignore = ["https://localhost/logout.php"]
     vuln_scanner = Scanner(url=target_url, ignore_links=links_to_ignore)
     # automated discovery
     vuln_scanner.crawl()

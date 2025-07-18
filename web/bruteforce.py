@@ -32,6 +32,7 @@ async def post(session, index, FUZZ, filter, semaphore, url, headers, payload_te
         try:
             async with session.post(url, data=data, headers=headers) as response:
                 text = await response.text()
+                print(text)
                 if filter in text:
                     response.status = 401
                     status = "Failed"

