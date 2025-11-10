@@ -157,7 +157,7 @@ txaio==2.10.0
 typing==3.6.6
 u-msgpack-python==2.1
 Unidecode==1.1.1
-urllib3==1.24.1
+urllib3==1.24.2
 venusian==1.2.0
 waitress==1.2.0b2
 webargs==5.1.2
