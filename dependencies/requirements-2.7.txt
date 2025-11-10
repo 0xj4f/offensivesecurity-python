@@ -21,7 +21,7 @@ Click==7.0
 colorama==0.3.7
 configparser==3.5.0b2
 constantly==15.1.0
-cryptography==2.6.1
+cryptography==41.0.5
 cssselect==1.1.0
 Cython==0.29.2
 deprecation==2.0.6
@@ -62,7 +62,7 @@ ldap3==2.5.1
 ldapdomaindump==0.9.1
 lxml==4.3.3
 lz4==1.1.0
-M2Crypto==0.31.0
+M2Crypto==0.39.0
 Mako==1.0.7
 MarkupSafe==1.1.0
 marshmallow==3.0.0b3
@@ -152,7 +152,7 @@ tornado==5.1.1
 tqdm==4.28.1
 translationstring==1.3
 trollius==2.0.1
-Twisted==18.9.0
+Twisted==23.10.0rc1
 txaio==2.10.0
 typing==3.6.6
 u-msgpack-python==2.1
@@ -165,7 +165,7 @@ webencodings==0.5.1
 WebOb==1.8.5
 websocket-client==0.53.0
 WebTest==2.0.32
-Werkzeug==0.14.1
+Werkzeug==3.0.1
 wifite==2.2.5
 wrapt==1.12.0
 wsaccel==0.6.2
