@@ -25,7 +25,7 @@ cryptography==2.6.1
 cssselect==1.1.0
 Cython==0.29.2
 deprecation==2.0.6
-Django==1.11.23
+Django==2.2.28
 dnslib==0.9.7
 dnspython==1.16.0
 easygui==0.96
