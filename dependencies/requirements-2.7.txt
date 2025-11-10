@@ -13,7 +13,7 @@ beautifulsoup4==4.8.0
 blinker==1.4
 bottle==0.12.15
 cbor==1.0.0
-certifi==2018.8.24
+certifi==2023.7.22
 Chameleon==2.24
 chardet==3.0.4
 CherryTree==0.38.8
